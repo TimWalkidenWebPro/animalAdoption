@@ -1,3 +1,5 @@
+import {NextResponse} from "next/server";
+
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 const priceId = {
@@ -6,11 +8,11 @@ const priceId = {
   '20': process.env.NEXT_PUBLIC_STRIPE_TWENTY_MONTH,
 }
 
-export default async function handler(req, res) {
+export async function POST(request) {
   if(process.env.NEXT_PUBLIC_REACT_DISABLE_PAYMENT === 'true') {
-    return res.status(401).json({ errors: {'payment': 'payment currently disabled'} });
+    return NextResponse.json({error: 'Payment type disabled'}, {status: 400});
   }
-  const body = JSON.parse(req.body);
+  const body = await request.json();
   const errors = {};
   if (!("paymentType" in body)) {
     errors.paymentType = "Payment type is missing";
@@ -21,7 +23,8 @@ export default async function handler(req, res) {
   }
 
   if (Object.keys(errors).length > 0) {
-    res.status(400).json(errors);
+    return NextResponse.json({error: errors}, {status: 400});
+
   } else {
     try {
       let paymentDetails = null;
@@ -90,10 +93,11 @@ export default async function handler(req, res) {
           paymentDetails
       );
 
-      res.json({url: session.url});
+      return NextResponse.json({url: session.url}, {status: 200});
+
     } catch (err) {
       console.log(err.message);
-      res.status(err.statusCode || 500).json(err.message);
+      return NextResponse.json({error: 'Internal server error'}, {status: 500});
     }
   }
 }
