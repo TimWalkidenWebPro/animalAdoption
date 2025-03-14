@@ -29,11 +29,11 @@ const ArticlePreview = ({index, article}: props) => {
                         <img
                             className='rounded-t-2xl absolute object-cover top-0 left-0 right-0 bottom-0 overflow-hidden w-0 h-0 max-h-full max-w-full min-h-full min-w-full'
                             width={254} height={170}
-                            src={article.content.image.filename} alt={article.content.title}/>
+                            src={article.content.image.filename} alt={article.content.title} loading='lazy' />
                     </div>
                 </div>
                 <div className='previewContent px-3 py-4 flex flex-col'>
-                    <h3 className='font-bold mb-4 min-h-[72px] overflow-hidden text-ellipsis max-h-[72px] '>{article.content.title}</h3>
+                    <p className='font-bold mb-4 min-h-[72px] overflow-hidden text-ellipsis max-h-[72px] '>{article.content.title}</p>
                     <span className='text-foreground font-bold'>{article.content.Author}</span>
                     <span className='font-bold'>{formattedDate}</span>
                 </div>

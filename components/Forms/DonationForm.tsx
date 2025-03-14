@@ -86,7 +86,7 @@ const DonationForm = () => {
                 />
                 <label
                     htmlFor="amountFive"
-                    className=" cursor-pointer peer-checked/amountFive:bg-foreground   bg-basecolor text-black font-bold rounded-2xl py-1 text-center w-20"
+                    className=" cursor-pointer peer-checked/amountFive:bg-foreground peer-checked/amountFive:text-white  bg-basecolor text-black font-bold rounded-2xl py-1 text-center w-20"
                 >
                     £5
                 </label>
@@ -106,7 +106,7 @@ const DonationForm = () => {
                     onClick={() => {
                         setShowOtherInput(false);
                     }}
-                    className="cursor-pointer peer-checked/amountTen:bg-foreground   bg-basecolor text-black font-bold rounded-2xl py-1 text-center w-20"
+                    className="cursor-pointer peer-checked/amountTen:bg-foreground peer-checked/amountTen:text-white   bg-basecolor text-black font-bold rounded-2xl py-1 text-center w-20"
                 >
                     £10
                 </label>
@@ -127,7 +127,7 @@ const DonationForm = () => {
                 />
                 <label
                     htmlFor="amountTwenty"
-                    className="cursor-pointer peer-checked/amountTwenty:bg-background peer-checked/amountTwenty:text-white  bg-basecolor text-black font-bold rounded-2xl py-1 text-center w-20"
+                    className="cursor-pointer peer-checked/amountTwenty:bg-foreground peer-checked/amountTwenty:text-white  bg-basecolor text-black font-bold rounded-2xl py-1 text-center w-20"
                 >
                     £20
                 </label>

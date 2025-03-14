@@ -38,7 +38,7 @@ const ContentWithImageRight= (params: Props) => {
         </div>
 
         <div className='hidden w-full xl:flex items-center justify-center'>
-            <img src={params.blok.Image.filename} alt="" width='300'/>
+            <img src={params.blok.Image.filename} alt="" width='300' loading='lazy'/>
         </div>
     </div>
 }

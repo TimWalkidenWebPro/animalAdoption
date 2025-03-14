@@ -51,7 +51,7 @@ const AnimalCard = ({animal}: {animal: Props}) => {
                                     animal.content.Age && (
                                         <div className='flex gap-4 items-center'>
                                         <span>
-                                            <img src='/age.svg' alt='Age' height={30}
+                                            <img src='/age.svg' alt='Age' height={30} width={30}
                                                  className='h-[30px]'/>
                                         </span>
                                             {animal.content.Age} years
@@ -62,7 +62,7 @@ const AnimalCard = ({animal}: {animal: Props}) => {
                                     animal.content.Gender && (
                                         <div className="flex gap-4 items-center">
                                         <span>
-                                            <img src='/breed.svg' alt='Age' height={30}
+                                            <img src='/breed.svg' alt='Age' height={30} width={30}
                                                  className='h-[30px]'/>
                                         </span>
                                             {animal.content.Gender}
@@ -75,7 +75,7 @@ const AnimalCard = ({animal}: {animal: Props}) => {
                             </p>
                             <Link href={`/${animal.full_slug}`}
                                   className="bg-foreground text-foregroundLightText block text-center w-full py-2 content-center  rounded-xl ">
-                                More Info
+                                View {animal.content.Name}
                             </Link>
                         </div>
                     </div>
