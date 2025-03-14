@@ -12,6 +12,7 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         basecolor: "var(--basecolor)",
+        foregroundLightText: "var(--foreground-light-text)",
         foregroundLight: "var(--foreground-light)",
         animalCardInfo: "var(--animal-card-info)",
       },

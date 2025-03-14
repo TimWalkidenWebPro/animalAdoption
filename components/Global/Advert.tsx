@@ -26,11 +26,11 @@ const Advert = (props: propsType) => {
                 <h2 className='font-bold text-2xl text-white'>{props.advert.heading}</h2>
                 <div className='flex gap-24 pt-8'>
                     <Link href={props.advert.linkOneHref.cached_url}
-                          className="bg-foreground px-8 flex h-[45px] content-center items-center rounded-xl transition-all duration-500 ease-out hover:-translate-y-4  hover:bg-foreground">
+                          className="text-foregroundLightText bg-foregroundLight px-8 flex h-[45px] content-center items-center rounded-xl transition-all duration-500 ease-out hover:-translate-y-4  hover:bg-foreground">
                         {props.advert.linkOneName}
                     </Link>
                     <Link href={props.advert.linkTwoHref.cached_url}
-                          className="bg-white border-foreground border-2  px-8 flex h-[45px] content-center items-center rounded-xl transition-all duration-500 ease-out hover:-translate-y-4  hover:bg-foreground">
+                          className="bg-foreground text-foregroundLightText  px-8 flex h-[45px] content-center items-center rounded-xl transition-all duration-500 ease-out hover:-translate-y-4  hover:bg-foreground">
                         {props.advert.linkTwoName}                    </Link>
                 </div>
             </div>

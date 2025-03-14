@@ -83,7 +83,7 @@ const ContactForm = ({buttonText = 'Submit', inquiryReasons}: props) => {
                 )
             }
 
-            <button disabled={disableSubmit} className='bg-foreground rounded-xl w-3/4 py-2 mx-auto' type="submit">{buttonText}</button>
+            <button disabled={disableSubmit} className='bg-foreground text-foregroundLightText rounded-xl w-3/4 py-2 mx-auto' type="submit">{buttonText}</button>
         </form>
     )
 }

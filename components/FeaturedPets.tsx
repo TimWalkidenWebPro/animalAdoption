@@ -58,10 +58,10 @@ const FeaturedPets= (params: Props) => {
     dangerouslySetInnerHTML={{__html: renderRichText(params.blok.Heading) ?? ""}}/>
         <p className="text-base text-center xl:w-1/2 mx-auto">{params.blok.Content}</p>
         <div className="xl:w-1/2 mx-auto flex justify-between mb-16 mt-6">
-            <Link href={params.blok.ButtonOneLink.cached_url} className="bg-foregroundLight px-8 flex h-[45px] content-center items-center w-max mx-auto rounded-xl transition-all duration-500 ease-out hover:-translate-y-4  hover:bg-foreground">
+            <Link href={params.blok.ButtonOneLink.cached_url} className="bg-foregroundLight text-foregroundLightText px-8 flex h-[45px] content-center items-center w-max mx-auto rounded-xl transition-all duration-500 ease-out hover:-translate-y-4  hover:bg-foreground">
                 {params.blok.ButtonOneName}
             </Link>
-            <Link href={params.blok.ButtonTwoLink.cached_url} className="border-foreground h-[45px] border-2  px-8 flex content-center items-center w-max mx-auto rounded-xl transition-all duration-500 ease-out hover:-translate-y-4  hover:bg-foreground">
+            <Link href={params.blok.ButtonTwoLink.cached_url} className="border-foreground h-[45px] border-2  px-8 flex content-center items-center w-max mx-auto rounded-xl transition-all duration-500 ease-out hover:-translate-y-4  hover:bg-foreground hover:text-foregroundLightText">
                 {params.blok.ButtonTwoName}
             </Link>
         </div>

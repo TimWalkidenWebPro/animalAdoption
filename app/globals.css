@@ -4,9 +4,10 @@
 
 :root {
   --background: #f5f7fa;
-  --foreground: #8ecc14;
+  --foreground: #264653;
   --basecolor: #D9D9D9;
-  --foreground-light: rgb(142, 204, 20, 0.5);
+  --foreground-light: #4f8899;
+  --foreground-light-text: #ffffff;
   --animal-card-info : rgb(217, 217, 217, 0.6)
 }
 

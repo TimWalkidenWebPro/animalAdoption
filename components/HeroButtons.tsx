@@ -8,10 +8,10 @@ export const HeroButtons = (params: any) => {
                 <h1 className="font-bold text-4xl mb-4" dangerouslySetInnerHTML={{ __html: handleRichText(params.blok.Heading)?.__html ?? "" }} />
                 <p className="text-base">{params.blok.Content}</p>
                 <div className="flex mt-8 items-center gap-8">
-                    <Link href={params.blok.ButtonOneHref.cached_url} className="bg-foregroundLight px-8 h-[45px] content-center  rounded-xl bg-opacity-50 transition-all duration-500 ease-out hover:-translate-y-4  hover:bg-foreground">
+                    <Link href={params.blok.ButtonOneHref.cached_url} className="bg-foregroundLight text-foregroundLightText px-8 h-[45px] content-center  rounded-xl bg-opacity-50 transition-all duration-500 ease-out hover:-translate-y-4  hover:bg-foreground">
                         {params.blok.ButtonOne}
                     </Link>
-                    <Link href={params.blok.ButtonTwoHref.cached_url} className="border-foreground h-[45px] border-2 content-center px-8  rounded-xl transition-all duration-500 ease-out hover:-translate-y-4  hover:bg-foreground">
+                    <Link href={params.blok.ButtonTwoHref.cached_url} className="border-foreground h-[45px] border-2 content-center px-8  rounded-xl transition-all duration-500 ease-out hover:-translate-y-4  hover:bg-foreground hover:text-foregroundLightText">
                         {params.blok.ButtonTwo}
                     </Link>
                 </div>

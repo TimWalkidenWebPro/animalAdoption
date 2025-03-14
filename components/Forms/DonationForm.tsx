@@ -172,7 +172,7 @@ const DonationForm = () => {
                     disabled={disablePayment}
                     type="submit"
                     onClick={() => setActionUrl("/api/checkout_sessions_stripe")}
-                    className="mt-8 rounded-lg hover:scale-110  py-2  bg-foreground  flex gap-4 justify-center items-center"
+                    className="mt-8 rounded-lg hover:scale-110 text-foregroundLightText  py-2  bg-foreground  flex gap-4 justify-center items-center"
                 >
                     Credit or Debit Card
                 </button>

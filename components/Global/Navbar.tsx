@@ -34,7 +34,7 @@ const Navbar = async () => {
                 }
 
                 <li>
-                    <Link href={navbar.MainButton[0].url.cached_url} className="bg-foregroundLight px-8 flex h-[45px] content-center items-center rounded-xl bg-opacity-50 transition-all duration-500 ease-out hover:-translate-y-4  hover:bg-foreground">
+                    <Link href={navbar.MainButton[0].url.cached_url} className="bg-foregroundLight text-foregroundLightText px-8 flex h-[45px] content-center items-center rounded-xl bg-opacity-50 transition-all duration-500 ease-out hover:-translate-y-4  hover:bg-foreground">
                         {navbar.MainButton[0].name}
                     </Link>
                 </li>

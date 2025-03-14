@@ -31,7 +31,7 @@ console.log(params);
                    <h1 className="font-bold text-4xl mb-4">{params.blok.Name}</h1>
                    <div className="text-base"
                         dangerouslySetInnerHTML={{__html: handleRichText(params.blok.Description)?.__html ?? ""}}/>
-                   <Link href={`/${params.blok.linkHref.cached_url}`} className="bg-foreground block w-max px-8 py-4 mt-8 h-[45px] content-center  rounded-xl bg-opacity-50 transition-all duration-500 ease-out hover:-translate-y-4  hover:bg-foreground">
+                   <Link href={`/${params.blok.linkHref.cached_url}`} className="bg-foreground text-foregroundLightText block w-max px-8 py-4 mt-8 h-[45px] content-center  rounded-xl bg-opacity-50 transition-all duration-500 ease-out hover:-translate-y-4  hover:bg-foreground">
                        {params.blok.linkText}
                    </Link>
                </div>

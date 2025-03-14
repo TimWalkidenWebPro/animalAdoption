@@ -23,7 +23,7 @@ const BlogSideBar = ({categories, latestArticles} : {categories: category[], lat
                 {
                     categories.map((category, index) => (
                         <Link href={`/${category.slug}`} key={index}
-                              className="bg-foregroundLight border-foreground border-solid border-2 font-bold  px-8 h-[45px] content-center  rounded-xl transition-all duration-500 ease-out hover:bg-foreground">
+                              className="bg-foreground text-foregroundLightText font-bold  px-8 h-[45px] content-center  rounded-xl transition-all duration-500 ease-out hover:bg-foreground">
                             {category.name}
                         </Link>
                     ))

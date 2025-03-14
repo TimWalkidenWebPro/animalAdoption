@@ -43,7 +43,7 @@ const Impact= (params: Props) => {
 
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 xl:w-[55%]">
             {params.blok.ImpactStat.map((stat: stat, index: number ) => (
-                <div className={`rounded-xl bg-foregroundLight bg-opacity-50 h-fit flex  transition-all duration-500 ease-out hover:-translate-y-4   ${index !== 1 ? 'xl:mt-12 flex-col' : 'flex-col-reverse'}`} key={index}>
+                <div className={`rounded-xl bg-foreground text-foregroundLightText bg-opacity-50 h-fit flex  transition-all duration-500 ease-out hover:-translate-y-4   ${index !== 1 ? 'xl:mt-12 flex-col' : 'flex-col-reverse'}`} key={index}>
                     <img className={`${index !== 1 ? 'rounded-t-xl' : 'rounded-b-xl'}`} src={stat.Image.filename} alt={stat.Image.alt} />
                     <div className="p-4">
                         <h3 className='text-center font-bold text-lg pb-2'>{stat.Heading}</h3>

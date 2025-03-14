@@ -74,7 +74,7 @@ const AnimalCard = ({animal}: {animal: Props}) => {
                                 {animal.content.shortDescription}
                             </p>
                             <Link href={`/${animal.full_slug}`}
-                                  className="bg-foreground block text-center w-full py-2 content-center  rounded-xl ">
+                                  className="bg-foreground text-foregroundLightText block text-center w-full py-2 content-center  rounded-xl ">
                                 More Info
                             </Link>
                         </div>
