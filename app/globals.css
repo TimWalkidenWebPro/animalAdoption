@@ -3,19 +3,82 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #f5f7fa;
+  --foreground: #8ecc14;
+  --basecolor: #D9D9D9;
+  --foreground-light: rgb(142, 204, 20, 0.5);
+  --animal-card-info : rgb(217, 217, 217, 0.6)
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7fa;
+}
+
+@media (min-width: 1280px) {
+  .serviceGrid {
+    grid-template-areas: "serviceOne Image serviceTwo" "serviceThree Image serviceFour";
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.transformCustom {
+  transform: translate(-50%, -50%);
+}
+
+.serviceBox:nth-child(1) {grid-area: serviceOne;}
+.serviceBox:nth-child(2) {grid-area: serviceTwo;}
+.serviceBox:nth-child(3) {grid-area: serviceThree;}
+.serviceBox:nth-child(4) {grid-area: serviceFour;}
+.serviceImage {grid-area: Image;}
+
+.previewArticle {
+  display: grid;
+  grid-template:
+        "image" 150px
+        "content" min-content;
+}
+
+.previewArticleSearch {
+  display: grid;
+  grid-template-areas: "image content";
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  min-height: 14rem;
+}
+
+.previewImage {
+  grid-area: image;
+}
+
+.previewContent {
+  grid-area: content;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--foreground) !important;
+}
+
+.swiper {
+  position: relative !important;
+  padding-bottom: 40px !important;
+}
+
+.swiper-pagination {
+  position: absolute !important;
+  bottom: 0 !important;
+  width: 100% !important;
+}
+
+.animalSlide {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.articleBody p {
+ margin-top: 1rem;
+}
+
+.articleBody h3 {
+  margin-bottom: 1rem;
+  font-size: 20px;
 }
