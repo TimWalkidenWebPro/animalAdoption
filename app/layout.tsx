@@ -15,10 +15,12 @@ export default function RootLayout({
   return (
           <html lang="en">
           <StoryblokProvider>
-              <body>
-              <Navbar/>
-              {children}
-              <Footer/>
+              <body className="h-screen m-0 flex flex-col">
+                  <div className="flex-grow">
+                      <Navbar/>
+                      {children}
+                  </div>
+                  <Footer/>
               </body>
           </StoryblokProvider>
           </html>
