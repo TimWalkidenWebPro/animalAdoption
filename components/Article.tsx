@@ -23,7 +23,7 @@ type latestArticle ={
 
 type article = {
     title: string,
-    author: string,
+    Author: string,
     image: {filename: string},
     Tag: string,
     content: string,
@@ -40,7 +40,7 @@ const Article = (params: Props) => {
                     <h1 className="font-bold text-3xl mb-3">{params.blok.title}</h1>
                     <div className="flex justify-between mb-8">
                         <p className="text-base">
-                            By <span className='text-foreground font-bold'>{params.blok.author}</span>
+                            By <span className='text-foreground font-bold'>{params.blok.Author}</span>
                         </p>
                         <p className="text-base">
                             {formattedDate}

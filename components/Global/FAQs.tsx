@@ -49,7 +49,7 @@ const FAQs = (props :propTypes) => {
      my-36 max-w-6xl xl:mx-auto mx-4 grid xl:grid-cols-2 gap-12 xl:justify-between `}>
 
         <div className='hidden xl:flex items-center justify-start '>
-            <img src={props.blok.Image.filename} className='' alt="" width='400'/>
+            <img src={props.blok.Image.filename} className='' alt={props.blok.Heading} width='400' loading='lazy'/>
         </div>
 
         <div className="">
