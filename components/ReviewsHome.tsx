@@ -69,7 +69,7 @@ const ReviewsHome= (params: Props) => {
             </Swiper>
         </div>
         <div>
-            <img src={params.blok.Image.filename} alt="" width='500'/>
+            <img src={params.blok.Image.filename} alt="Reviews" width='500' height={342} loading='lazy'/>
         </div>
 
     </div>

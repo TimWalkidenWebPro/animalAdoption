@@ -44,7 +44,7 @@ const AnimalCard = ({animal}: {animal: Props}) => {
                         className="absolute w-full h-full "
                         style={{transform: "rotateY(180deg)", backfaceVisibility: "hidden"}}>
                         <div className='bg-basecolor p-6 rounded-3xl absolute h-[90%] w-[90%] top-2/4 left-1/2 transformCustom'>
-                            <h3 className='font-bold text-lg text-center'>{animal.content.Name}</h3>
+                            <p className='font-bold text-lg text-center'>{animal.content.Name}</p>
                             <p className='mt-2 text-center'>{animal.content.Breed}</p>
                             <div className="flex justify-between mt-4">
                                 {
