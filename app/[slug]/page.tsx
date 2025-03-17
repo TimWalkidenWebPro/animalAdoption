@@ -1,12 +1,25 @@
 import { StoryblokStory } from "@storyblok/react/rsc";
-import {notFound, permanentRedirect} from "next/navigation";
-import {fetchPageContent, getAllPosts, getPostCategories} from "@/lib/utils";
+import { permanentRedirect} from "next/navigation";
+import {getAllPosts, getPostCategories} from "@/lib/utils";
+import {getPreData} from "@/lib/cache";
+
+export async function generateMetadata(props:any) {
+    const params = await props.params;
+    const story = await getPreData(`page${params.slug}`, params.slug, ["ReviewsDesignTwo.Reviews", "FeaturedPets.Animals"])
+    return {
+        title: story.content.meta_title,
+        description: story.content.meta_description,
+        alternates: {
+            canonical: `${process.env.NEXT_PUBLIC_APP_URL}${params.slug}`,
+        },
+    }
+}
 
 
 const page = async (props:any) => {
-    console.log('hereSLugOne')
     const params = await props.params;
-    const story = await fetchPageContent(params.slug, ["ReviewsDesignTwo.Reviews", "FeaturedPets.Animals"]);
+    const story = await getPreData(`page${params.slug}`, params.slug, ["ReviewsDesignTwo.Reviews", "FeaturedPets.Animals"])
+
     if(story) {
         if(story?.content?.component === 'BlogSearch') {
             const [articles, categories] = await Promise.all([
