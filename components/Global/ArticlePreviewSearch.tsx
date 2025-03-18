@@ -17,7 +17,6 @@ type props = {
 
 const ArticlePreviewSearch = ({index, article}: props) => {
     const date = new Date(article.created_at);
-console.log(article)
     const formattedDate = date.toLocaleDateString("en-GB").slice(0, 8);
 
     return (

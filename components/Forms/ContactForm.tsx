@@ -33,7 +33,6 @@ const ContactForm = ({buttonText = 'Submit', inquiryReasons}: props) => {
             });
             const result = await response.json();
             if (response.ok) {
-               console.log('success');
                 setDisableSubmit(false);
                 setSuccess(true);
             } else {

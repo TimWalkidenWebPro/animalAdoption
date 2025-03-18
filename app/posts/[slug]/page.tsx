@@ -26,7 +26,6 @@ const page = async (props:any) => {
             getAllPosts(3, 1, story.content.categoryId),
             getPostCategories(``)
         ])
-        console.log(story)
         return  <StoryblokStory story={story} createdAt={story.created_at} articles={articles} categories={categories}/>;
 
     } else {

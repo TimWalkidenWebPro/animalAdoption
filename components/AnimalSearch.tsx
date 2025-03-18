@@ -27,7 +27,6 @@ type Animal = {
 }
 
 const AnimalSearch = (params: Props) => {
-    console.log(params.animals)
     return (
         <div className='my-8 xl:my-24 max-w-6xl xl:mx-auto mx-4'>
             <h1 className="font-bold text-4xl mb-4 text-center"

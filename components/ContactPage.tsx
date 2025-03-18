@@ -34,7 +34,6 @@ type question = {
 };
 
 const contactPage = async (params:props) => {
-    console.log(params);
     let advertData = null;
     if(params.blok.includeAdvert) {
         advertData = await getAdvert();

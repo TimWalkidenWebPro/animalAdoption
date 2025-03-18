@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link";
-import {useState} from "react";
+import {RefObject, useEffect, useRef, useState} from "react";
 import {AnimatePresence, motion} from "framer-motion";
 type Props = {
     navbar : {
@@ -15,7 +15,18 @@ type LinkType = {
 }
 
 const Navbar = ({navbar}: Props) => {
-    const [showMenu, setShowMenu] = useState(false);
+    const [showMenu, setShowMenu] = useState<boolean>(false);
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+                setShowMenu(false);
+        }
+
+        if (showMenu) {
+            document.addEventListener("mousedown", handleClickOutside);
+        } else {
+            document.removeEventListener("mousedown", handleClickOutside);
+        }
+    }, [showMenu]);
 
     return (
         <>
@@ -57,6 +68,7 @@ const Navbar = ({navbar}: Props) => {
                         exit={{x: '-100%', opacity: 0}}
                         transition={{type: 'spring', stiffness: 100, damping: 15}}
                         className={`fixed sm:hidden left-0  top-0 h-screen z-10   bg-foreground  text-foregroundLightText`}>
+                        <button className='flex justify-end w-full pr-4 pt-2' onClick={() => setShowMenu(!showMenu)}>x</button>
                         <ul className="flex flex-col xl:flex-row gap-8 xl:items-center p-4 xl:p-0  xl:text-black ">
                             {
                                 navbar.Menu.map((item: LinkType, index: number) => {

@@ -11,7 +11,6 @@ export const cachedData = <T>(prefix: string, callback: () => Promise<T>, second
     const now = Date.now();
 
     if (cache[prefix] && (now - cache[prefix].added) < seconds * 1000) {
-        console.log('Using cached data');
         return cache[prefix].promise;
     }
 
