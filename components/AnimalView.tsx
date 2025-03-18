@@ -14,6 +14,7 @@ type Props = {
         Name: string;
         Breed: string;
         Age: string;
+        Gender: string;
         AnimalAttributes: {
             content: string;
             Heading: string;
@@ -59,7 +60,7 @@ const AnimalView = (params: Props) => {
                     params.blok.Breed && (
                         <div className='flex gap-8 bg-foregroundLight text-foregroundLightText py-2 px-4 rounded'>
                             <div className='flex items-center justify-center'>
-                                <img src='/breed.svg' alt='Bread' height={30} width={30}
+                                <img src='/paw-white.svg' alt='Bread' height={30} width={30}
                                      className='h-[30px]'/>
                             </div>
                             <div>
@@ -80,6 +81,21 @@ const AnimalView = (params: Props) => {
                             <div>
                                 <h3 className='font-bold'>Age</h3>
                                 <p>{params.blok.Age} years</p>
+                            </div>
+                        </div>
+                    )
+                }
+
+                {
+                    params.blok.Age && (
+                        <div className='flex gap-8 bg-foregroundLight text-foregroundLightText py-2 px-4 rounded'>
+                            <div className='flex items-center justify-center'>
+                                <img src='/gender-white.svg' alt='Age' height={30} width={30}
+                                     className='h-[30px]'/>
+                            </div>
+                            <div>
+                                <h3 className='font-bold'>Gender</h3>
+                                <p>{params.blok.Gender}</p>
                             </div>
                         </div>
                     )
