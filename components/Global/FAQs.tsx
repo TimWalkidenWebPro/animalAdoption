@@ -23,10 +23,10 @@ const FaqsItem = ({question, answer}: question ) => {
 
     return (
         <motion.div initial={false}
-                    animate={{backgroundColor: isOpen ? 'var(--foreground-light)' : ''}}
+                    animate={{backgroundColor: isOpen ? 'var(--foreground-light)' : '', color: isOpen ? 'var(--foreground-light-text)' : ''}}
                     transition={{duration: 0.3, ease: 'easeInOut'}}
                     className='border-4 border-foreground rounded-xl px-2 py-4 mb-4'>
-            <button className="font-bold text-base cursor-pointer flex justify-between w-full" onClick={() => {
+            <button className="font-bold text-base text-left cursor-pointer flex justify-between w-full" onClick={() => {
                 setIsOpen(!isOpen)
             }}>
                 {question}
@@ -38,7 +38,7 @@ const FaqsItem = ({question, answer}: question ) => {
                 initial={false}
                 animate={{height: isOpen ? 'auto' : '0', opacity: isOpen ? '1' : '0'}}
                 transition={{duration: 0.3, ease: 'easeInOut'}} className='overflow-hidden'>
-                <p className="text-base mt-2">{answer}</p>
+                <p className="text-base mt-2 text-foregroundLightText">{answer}</p>
             </motion.div>
         </motion.div>
     )
