@@ -15,6 +15,11 @@ body {
   background: #f5f7fa;
 }
 
+.serviceGrid {
+  grid-template-areas: "serviceOne" "serviceTwo" "serviceThree" "serviceFour";
+
+}
+
 @media (min-width: 1280px) {
   .serviceGrid {
     grid-template-areas: "serviceOne Image serviceTwo" "serviceThree Image serviceFour";

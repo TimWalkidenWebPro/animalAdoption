@@ -46,9 +46,9 @@ const ReviewsHome= (params: Props) => {
     return <div {...storyblokEditable(params.blok)} ref={ref} className={`
     my-36 max-w-6xl xl:mx-auto mx-4  transition-all duration-700 ease-out transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'} flex xl:flex-row flex-col gap-12 xl:justify-between xl:items-center`}>
         <div className="xl:max-w-[32rem]">
-            <h2 className="font-bold text-4xl mb-4 r"
+            <h2 className="font-bold text-4xl mb-4 text-center xl:text-left"
                 dangerouslySetInnerHTML={{__html: renderRichText(params.blok.Heading) ?? ""}}/>
-            <p className="text-base mb-6">{params.blok.Content}</p>
+            <p className="text-base mb-6 text-center xl:text-left">{params.blok.Content}</p>
             <Swiper
                 loop={true}
                 pagination={{
@@ -69,7 +69,7 @@ const ReviewsHome= (params: Props) => {
             </Swiper>
         </div>
         <div>
-            <img src={params.blok.Image.filename} alt="Reviews" width='500' height={342} loading='lazy'/>
+            <img className='hidden xl:block' src={params.blok.Image.filename} alt="Reviews" width='500' height={342} loading='lazy'/>
         </div>
 
     </div>

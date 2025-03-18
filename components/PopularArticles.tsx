@@ -53,7 +53,7 @@ const PopularArticles= (params: Props) => {
         <Link href={params.blok.buttonLink.url} className="bg-foregroundLight text-foregroundLightText mt-8 px-8 flex h-[45px] content-center items-center w-max mx-auto rounded-xl transition-all duration-500 ease-out hover:-translate-y-4  hover:bg-foreground">
             {params.blok.buttonName}
         </Link>
-        <div className="grid xl:grid-cols-4 grid-cols-1 gap-6 mt-8">
+        <div className="grid xl:grid-cols-4 grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
             {
                 params.blok.articles.map((article: articleType, index: number) => {
 

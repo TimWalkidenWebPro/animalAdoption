@@ -21,14 +21,14 @@ type props = {
 const HeroBulletPoints = (params:props) => {
     return (
         <section {...storyblokEditable(params.blok)}
-                 className=" my-36 xl:mt-24  max-w-6xl xl:mx-auto mx-4 flex xl:justify-between xl:items-center">
+                 className="mb-36  mt-12 max-w-6xl xl:mx-auto mx-4 flex xl:justify-between xl:items-center">
             <div className='hidden xl:block'>
                 <img src={params.blok.Image.filename} alt="" width='500'/>
             </div>
-            <div className="xl:max-w-[32rem]">
-                <h1 className="font-bold text-4xl mb-4"
+            <div className="xl:max-w-[32rem] w-full">
+                <h1 className="font-bold text-4xl mb-4 text-center xl:text-left"
                     dangerouslySetInnerHTML={{__html: handleRichText(params.blok.Heading)?.__html ?? ""}}/>
-                <p className="text-base">{params.blok.Content}</p>
+                <p className="text-base text-center xl:text-left">{params.blok.Content}</p>
                 <ul className="flex gap-4 flex-col mt-8">
                     {params.blok.BulletPoint.map((p, index: number) => {
                         return (

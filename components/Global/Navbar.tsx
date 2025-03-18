@@ -1,12 +1,12 @@
-import {getNavigation} from "@/lib/utilsClient";
+"use client"
 import Link from "next/link";
-
+import {useState} from "react";
+import {AnimatePresence, motion} from "framer-motion";
 type Props = {
-    Logo: {
-        filename: string;
-    },
-    Menu: LinkType[],
-    MainButton: LinkType[],
+    navbar : {
+        Menu: LinkType[],
+        MainButton: LinkType[],
+    }
 }
 
 type LinkType = {
@@ -14,34 +14,73 @@ type LinkType = {
     url: { cached_url: string }
 }
 
-const Navbar = async () => {
-    const navbar: Props = await getNavigation()
+const Navbar = ({navbar}: Props) => {
+    const [showMenu, setShowMenu] = useState(false);
 
-    return <div className="max-w-6xl xl:mx-auto mx-4 flex justify-between items-center pt-8">
-        <a href='/'>
-            <img src={navbar.Logo.filename} alt="Logo" width='250' height='35' />
-        </a>
-        <nav>
-            <ul className="flex gap-8 items-center">
-                {
-                    navbar.Menu.map((item: LinkType, index: number) => {
-                        return (
-                            <li key={index}>
-                                <Link href={item.url.cached_url}>{item.name}</Link>
+    return (
+        <>
+
+            <div className="sm:hidden">
+                <button onClick={() => {
+                    setShowMenu(!showMenu);
+                }}>
+                    <img src={'/menu.svg'} width='20' height='20' alt='Menu'/>
+                </button>
+            </div>
+
+            <nav
+                className={`hidden sm:block`}>
+                <ul className="flex flex-col sm:flex-row gap-8 sm:items-center p-4 xl:p-0  xl:text-black ">
+                    {
+                        navbar.Menu.map((item: LinkType, index: number) => {
+                            return (
+                                <li key={index}>
+                                    <Link href={item.url.cached_url}>{item.name}</Link>
+                                </li>
+                            )
+                        })
+                    }
+                    <li>
+                        <Link href={navbar.MainButton[0].url.cached_url}
+                              className="bg-foregroundLight text-foregroundLightText px-8 flex h-[45px] content-center items-center rounded-xl bg-opacity-50 transition-all duration-500 ease-out hover:-translate-y-4  hover:bg-foreground">
+                            {navbar.MainButton[0].name}
+                        </Link>
+                    </li>
+                </ul>
+            </nav>
+
+            <AnimatePresence>
+                {showMenu && (
+                    <motion.nav
+                        initial={{x: '-100%', opacity: 0}}
+                        animate={{x: '0', opacity: 1}}
+                        exit={{x: '-100%', opacity: 0}}
+                        transition={{type: 'spring', stiffness: 100, damping: 15}}
+                        className={`fixed sm:hidden left-0  top-0 h-screen z-10   bg-foreground  text-foregroundLightText`}>
+                        <ul className="flex flex-col xl:flex-row gap-8 xl:items-center p-4 xl:p-0  xl:text-black ">
+                            {
+                                navbar.Menu.map((item: LinkType, index: number) => {
+                                    return (
+                                        <li key={index}>
+                                            <Link href={item.url.cached_url}>{item.name}</Link>
+                                        </li>
+                                    )
+                                })
+                            }
+                            <li>
+                                <Link href={navbar.MainButton[0].url.cached_url}
+                                      className="bg-foregroundLight text-foregroundLightText px-8 flex h-[45px] content-center items-center rounded-xl bg-opacity-50 transition-all duration-500 ease-out hover:-translate-y-4  hover:bg-foreground">
+                                    {navbar.MainButton[0].name}
+                                </Link>
                             </li>
-                        )
-                    })
-                }
+                        </ul>
+                    </motion.nav>
+                )}
+            </AnimatePresence>
+        </>
+    )
 
-                <li>
-                    <Link href={navbar.MainButton[0].url.cached_url} className="bg-foregroundLight text-foregroundLightText px-8 flex h-[45px] content-center items-center rounded-xl bg-opacity-50 transition-all duration-500 ease-out hover:-translate-y-4  hover:bg-foreground">
-                        {navbar.MainButton[0].name}
-                    </Link>
-                </li>
 
-            </ul>
-        </nav>
-    </div>;
 }
 
 export default Navbar;

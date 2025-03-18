@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./globals.css";
-import Navbar from "@/components/Global/Navbar";
+import Header from "@/components/Global/Header";
 import Footer from "@/components/Footer";
 import {StoryblokProvider} from "@/components/StoryblokProviders/StoryblokProvider";
 
@@ -17,7 +17,7 @@ export default function RootLayout({
           <StoryblokProvider>
               <body className="h-screen m-0 flex flex-col">
                   <div className="flex-grow">
-                      <Navbar/>
+                      <Header/>
                       {children}
                   </div>
                   <Footer/>

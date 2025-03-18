@@ -26,7 +26,7 @@ const AnimalView = (params: Props) => {
 console.log(params);
     return (
         <div className='mt-16 max-w-6xl xl:mx-auto mx-4 mb-8'>
-           <div className='xl:grid xl:grid-cols-2 flex flex-col gap-12 mb-28'>
+           <div className='sm:grid sm:grid-cols-2 flex flex-col gap-12 mb-28 items-center'>
                <div>
                    <h1 className="font-bold text-4xl mb-4">{params.blok.Name}</h1>
                    <div className="text-base"
