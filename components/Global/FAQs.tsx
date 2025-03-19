@@ -1,6 +1,7 @@
 'use client'
 import {useState} from "react";
 import {motion} from "framer-motion";
+import {useInView} from "react-intersection-observer";
 
 type propTypes = {
     blok: {
@@ -44,22 +45,31 @@ const FaqsItem = ({question, answer}: question ) => {
     )
 }
 
+const itemVariants =  {
+    hidden: { opacity: 0, y: 20 },
+    show: (i: number) => ( { opacity: 1, y: 0, transition: {duration: 0.5, delay: i * 0.5} })
+}
+
 const FAQs = (props :propTypes) => {
-    return <div className={`
+    const { ref, inView } = useInView({
+        threshold: 0.5,
+        triggerOnce: true,
+    });
+    return <div ref={ref} className={`
      my-36 max-w-6xl xl:mx-auto mx-4 grid xl:grid-cols-2 gap-12 xl:justify-between `}>
 
-        <div className='hidden xl:flex items-center justify-start '>
+        <motion.div initial='hidden' animate={inView ? 'show' : 'hidden'} custom={1} variants={itemVariants} className='hidden xl:flex items-center justify-start '>
             <img src={props.blok.Image.filename} className='' alt={props.blok.Heading} width='400' loading='lazy'/>
-        </div>
+        </motion.div>
 
-        <div className="">
-            <h1 className="font-bold text-4xl mb-4"> {props.blok.Heading}</h1>
-            <p className="text-base mb-6">{props.blok.content}</p>
-            <div>
+        <div >
+            <motion.h1 initial='hidden' animate={inView ? 'show' : 'hidden'} custom={2} variants={itemVariants} className="font-bold text-4xl mb-4"> {props.blok.Heading}</motion.h1>
+            <motion.p initial='hidden' animate={inView ? 'show' : 'hidden'} custom={3} variants={itemVariants} className="text-base mb-6">{props.blok.content}</motion.p>
+            <motion.div initial='hidden' animate={inView ? 'show' : 'hidden'} custom={4} variants={itemVariants}>
                 {props.blok.questions.map((q, index: number) => (
                     <FaqsItem answer={q.answer} key={index} question={q.question} />
                 ))}
-            </div>
+            </motion.div>
         </div>
 
 
